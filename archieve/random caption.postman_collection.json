@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "b0d55543-ec01-43c7-bdd1-301f49945491",
+		"name": "random caption",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post caption",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Ade Iskandar Zulkaraen\",\r\n    \"caption\": \"Menunggu hadirnya seseorang yang membuatmu bahagia, adalah cara tebaik untuk membuatmu sedih dan kecewa.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/caption",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"caption"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Caption",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/caption",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"caption"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del Captions",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/captions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"captions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
