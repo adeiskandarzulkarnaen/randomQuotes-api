@@ -1,15 +1,9 @@
 const mysql = require('mysql2/promise');
 
-const dbConfiguration = {
-  host : 'localhost',
-  user : 'root',
-  password : '',
-  database : 'db_random_captions',
-};
-
+const { dbConfig }  = require('./config');
 
 const postCaptionToDatabase = async (cid, author, caption) => {
-  const database = await mysql.createConnection(dbConfiguration);
+  const database = await mysql.createConnection(dbConfig);
   
   await database.execute(
     `INSERT INTO tb_captions VALUES(?, ?, ?)`,
@@ -20,7 +14,7 @@ const postCaptionToDatabase = async (cid, author, caption) => {
 };
 
 const getCaptionFromDatabase = async () => {
-  const database = await mysql.createConnection(dbConfiguration);
+  const database = await mysql.createConnection(dbConfig);
   
   const [ rows ] = await database.query(`
     SELECT author, caption  
@@ -33,7 +27,7 @@ const getCaptionFromDatabase = async () => {
 }
 
 const deleteCaptions = async () => {
-  const database = await mysql.createConnection(dbConfiguration);
+  const database = await mysql.createConnection(dbConfig);
   
   await database.execute(`DELETE FROM tb_captions`);
   
